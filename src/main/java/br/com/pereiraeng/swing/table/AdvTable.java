@@ -55,17 +55,17 @@ public class AdvTable extends JTable implements KeyListener {
 				int[] rows = this.getSelectedRows();
 				TableModel tm = this.getModel();
 
-				StringBuilder sb = new StringBuilder();
+				StringBuilder builder = new StringBuilder();
 				int cols = this.getColumnModel().getColumnCount();
 				for (int i = 0; i < rows.length; i++) {
 					for (int j = 0; j < cols; j++) {
-						sb.append(tm.getValueAt(rows[i], j));
+						builder.append(tm.getValueAt(rows[i], j));
 						if (j != cols - 1)
-							sb.append("\t");
+							builder.append("\t");
 					}
-					sb.append("\n");
+					builder.append("\n");
 				}
-				Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.toString()), null);
+				Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(builder.toString()), null);
 
 				delete(tm, rows);
 			} else if (e.getKeyChar() == 22) // se apertar V (colar)

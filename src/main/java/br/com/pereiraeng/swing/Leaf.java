@@ -10,8 +10,8 @@ import java.util.Calendar;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import br.com.pereiraeng.swing.time.TimeMotor;
 import br.com.pereiraeng.core.TimeRefresh;
+import br.com.pereiraeng.swing.time.TimeMotor;
 
 /**
  * Painel delimitando uma área de desenho. Faz parte do grupo

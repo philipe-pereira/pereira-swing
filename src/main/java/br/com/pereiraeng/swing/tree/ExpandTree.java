@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JTree;
 
 import br.com.pereiraeng.icons.Icons;
+import br.com.pereiraeng.icons.PereiraIcon;
 import br.com.pereiraeng.swing.SwingUtils;
 
 /**
@@ -26,9 +27,9 @@ public class ExpandTree extends JButton implements ActionListener {
 	 * @param tree árvore a ser expandida
 	 */
 	public ExpandTree(JTree tree) {
-		super(Icons.loadUtilsIcon("expand.png"));
+		super(PereiraIcon.EXPAND.create());
 		setToolTipText("Expandir árvore");
-		setPreferredSize(SwingUtils.DIM_BUTTON_SMALL_ICON);
+		setPreferredSize(Icons.DIM_BUTTON_SMALL_ICON);
 		addActionListener(this);
 		this.tree = tree;
 	}

@@ -7,7 +7,7 @@ import javax.swing.AbstractListModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 
-import br.com.pereiraeng.icons.Icons;
+import br.com.pereiraeng.icons.PereiraIcon;
 import br.com.pereiraeng.swing.SwingUtils;
 import br.com.pereiraeng.swing.list.model.SharedCollectionModel;
 
@@ -70,7 +70,7 @@ public class PasteListButton<V> extends JButton implements ActionListener {
 	 *                  Qualquer outro valor para manter a sequência de caracteres
 	 */
 	public PasteListButton(AbstractListModel<V> listModel, int d) {
-		super(Icons.loadUtilsIcon(("Paste.gif")));
+		super(PereiraIcon.PASTE.create());
 		addActionListener(this);
 		this.listModel = listModel;
 		this.d = d;

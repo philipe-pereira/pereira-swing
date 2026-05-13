@@ -25,9 +25,9 @@ import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
 
+import br.com.pereiraeng.core.DisplayableFields;
 import br.com.pereiraeng.swing.SwingUtils;
 import br.com.pereiraeng.swing.button.SearchField;
-import br.com.pereiraeng.core.DisplayableFields;
 
 /**
  * Classe do objeto gráfico da tabela. A tabela [seu modelo] não pode ter seus
@@ -176,7 +176,7 @@ public class Table extends JScrollPane implements ChangeListener {
 	/**
 	 * Adds the specified component to the end of this list.
 	 * 
-	 * @param k the component to be added
+	 * @param element the component to be added
 	 */
 	public void addElementRH(String element) {
 		if (this.modelRowHeader == null)

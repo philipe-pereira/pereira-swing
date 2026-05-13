@@ -18,8 +18,8 @@ import javax.swing.JTextField;
 import javax.swing.ListModel;
 import javax.swing.table.TableModel;
 
-import br.com.pereiraeng.swing.Grade;
 import br.com.pereiraeng.core.StringUtils;
+import br.com.pereiraeng.swing.Grade;
 
 /**
  * Classe do objeto gráfico de um campo de texto com duas setas ao lado para se

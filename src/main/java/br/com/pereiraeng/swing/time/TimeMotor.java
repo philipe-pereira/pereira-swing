@@ -1,8 +1,8 @@
 package br.com.pereiraeng.swing.time;
 
-import br.com.pereiraeng.swing.Leaf;
 import br.com.pereiraeng.core.DefaultTimeMotor;
 import br.com.pereiraeng.core.TimeRefresh;
+import br.com.pereiraeng.swing.Leaf;
 
 /**
  * Classe do objeto que cadencia a {@link Leaf#repaint() reimpressão} das

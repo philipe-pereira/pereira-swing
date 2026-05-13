@@ -7,7 +7,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.table.TableModel;
 
-import br.com.pereiraeng.icons.Icons;
+import br.com.pereiraeng.icons.PereiraIcon;
 import br.com.pereiraeng.swing.SwingUtils;
 import br.com.pereiraeng.swing.table.AdvTable;
 
@@ -78,7 +78,7 @@ public class PasteTableButton extends JButton implements ActionListener {
 	 * @param columnOffset índice da coluna onde deve-se começar a colar
 	 */
 	public PasteTableButton(TableModel tableModel, boolean d, boolean resizeRows, int rowOffset, int columnOffset) {
-		super(Icons.loadUtilsIcon(("Paste.gif")));
+		super(PereiraIcon.PASTE.create());
 		addActionListener(this);
 		this.tableModel = tableModel;
 		this.d = d;

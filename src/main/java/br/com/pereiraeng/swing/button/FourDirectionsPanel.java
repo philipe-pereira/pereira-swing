@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-import br.com.pereiraeng.icons.Icons;
+import br.com.pereiraeng.icons.PereiraIcon;
 import br.com.pereiraeng.swing.Grade;
 
 /**
@@ -36,22 +36,22 @@ public class FourDirectionsPanel extends Grade {
 	 */
 	public FourDirectionsPanel(ActionListener listener) {
 		Dimension dimension = new Dimension(24, 24);
-		up = new JButton(Icons.loadUtilsIcon("Up.gif"));
+		up = new JButton(PereiraIcon.UP.create());
 		up.setActionCommand(UP);
 		up.setPreferredSize(dimension);
 		add(up, 1, 0, 1, 1);
 
-		down = new JButton(Icons.loadUtilsIcon("Down.gif"));
+		down = new JButton(PereiraIcon.DOWN.create());
 		down.setActionCommand(DOWN);
 		down.setPreferredSize(dimension);
 		add(down, 1, 2, 1, 1);
 
-		left = new JButton(Icons.loadUtilsIcon("Previous.gif"));
+		left = new JButton(PereiraIcon.PREVIOUS.create());
 		left.setActionCommand(LEFT);
 		left.setPreferredSize(dimension);
 		add(left, 0, 1, 1, 1);
 
-		right = new JButton(Icons.loadUtilsIcon("Next.gif"));
+		right = new JButton(PereiraIcon.NEXT.create());
 		right.setActionCommand(RIGHT);
 		right.setPreferredSize(dimension);
 		add(right, 2, 1, 1, 1);

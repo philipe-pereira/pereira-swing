@@ -7,7 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import br.com.pereiraeng.core.LocaleConfig;
-import br.com.pereiraeng.icons.Icons;
+import br.com.pereiraeng.icons.PereiraIcon;
 
 /**
  * Classe do objeto gráfico com dois butões, um para <strong>Co</strong>nfirmar
@@ -44,7 +44,7 @@ public class CoCaPanel extends JPanel {
 		if (text)
 			b = new JButton(LocaleConfig.hasConfig() ? LocaleConfig.getString("ok") : "Confirmar");
 		else
-			b = new JButton(Icons.loadUtilsIcon("OK.gif"));
+			b = new JButton(PereiraIcon.OK.create());
 		b.setActionCommand(EDITION_OK);
 		b.setMnemonic('\n');
 		this.add(b);
@@ -53,7 +53,7 @@ public class CoCaPanel extends JPanel {
 		if (text)
 			b = new JButton(LocaleConfig.hasConfig() ? LocaleConfig.getString("cancel") : "Cancelar");
 		else
-			b = new JButton(Icons.loadUtilsIcon("Cancel.gif"));
+			b = new JButton(PereiraIcon.CANCEL.create());
 		b.setActionCommand(EDITION_CANCEL);
 		b.setMnemonic(27);
 		this.add(b);

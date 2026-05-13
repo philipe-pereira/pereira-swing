@@ -84,7 +84,6 @@ public abstract class LeafO<T extends Des> extends Leaf
 			if (!sent)
 				setDrawInfo(ds);
 			out = getClicks(ds);
-//28/11/2020	sent = false;
 		}
 		return out;
 	}

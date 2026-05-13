@@ -1,5 +1,8 @@
 package br.com.pereiraeng.swing.table.renderer;
 
+import java.awt.Color;
+import java.awt.Component;
+
 /*
  * Copyright (c) 1995, 2008, Oracle and/or its affiliates. All rights reserved.
  *
@@ -41,8 +44,6 @@ import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.border.Border;
 import javax.swing.table.TableCellRenderer;
-import java.awt.Color;
-import java.awt.Component;
 
 public class ColorRenderer extends JLabel implements TableCellRenderer {
 	private static final long serialVersionUID = 1L;

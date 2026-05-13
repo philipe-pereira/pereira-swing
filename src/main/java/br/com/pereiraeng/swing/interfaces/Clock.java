@@ -2,6 +2,8 @@ package br.com.pereiraeng.swing.interfaces;
 
 import java.awt.Dimension;
 
+import br.com.pereiraeng.swing.time.TimeMotor;
+
 /**
  * Interface dos objetos desenháveis em que é necessário saber os
  * {@link TimeMotor valores do contador cadenciado}

@@ -18,8 +18,8 @@ import javax.swing.event.ChangeListener;
 
 import br.com.pereiraeng.core.TimeUtils;
 import br.com.pereiraeng.icons.Icons;
+import br.com.pereiraeng.icons.PereiraIcon;
 import br.com.pereiraeng.swing.Grade;
-import br.com.pereiraeng.swing.SwingUtils;
 import br.com.pereiraeng.swing.input.Input;
 
 /**
@@ -118,14 +118,14 @@ public class TimeInput extends Grade implements ChangeListener, Input<Calendar>,
 		}
 
 		if (jump > 0) {
-			JButton b = new JButton(Icons.loadUtilsIcon("Previous.gif"));
-			b.setPreferredSize(SwingUtils.DIM_BUTTON_SMALL_ICON);
+			JButton b = new JButton(PereiraIcon.PREVIOUS.create());
+			b.setPreferredSize(Icons.DIM_BUTTON_SMALL_ICON);
 			b.addActionListener(this);
 			b.setActionCommand(jump + "-B-" + actionCommand);
 			add(b, 0, 0, 1, 3);
 
-			b = new JButton(Icons.loadUtilsIcon("Next.gif"));
-			b.setPreferredSize(SwingUtils.DIM_BUTTON_SMALL_ICON);
+			b = new JButton(PereiraIcon.NEXT.create());
+			b.setPreferredSize(Icons.DIM_BUTTON_SMALL_ICON);
 			b.addActionListener(this);
 			b.setActionCommand(jump + "-F-" + actionCommand);
 			add(b, 3, 0, 1, 3);

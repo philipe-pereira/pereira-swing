@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE xml>
+<raiz top="0" right="0" bottom="0" left="0">
+	<label nome="columnLabel" x="0" y="3" w="1" h="1">
+		<texto_valor_1>col</texto_valor_1>
+	</label>
+	<spinner nome="MCcolumns" x="1" y="3" w="1" h="1">
+		<valor_min>5</valor_min>
+		<texto_valor_1>10</texto_valor_1>
+	</spinner>
+	<label nome="rowLabel" x="2" y="3" w="1" h="1">
+		<texto_valor_1>lin</texto_valor_1>
+	</label>
+	<spinner nome="MCrows" x="3" y="3" w="1" h="1">
+		<valor_min>5</valor_min>
+		<texto_valor_1>10</texto_valor_1>
+	</spinner>
+	<butao nome="new" x="5" y="0" w="1" h="1">
+		<texto_valor_1>novo</texto_valor_1>
+		<action>newComponent</action>
+	</butao>
+	<butao nome="delete" x="0" y="2" w="6" h="1">
+		<texto_valor_1>apagar</texto_valor_1>
+		<action>delete</action>
+	</butao>
+	<spinner nome="MCbottom" x="2" y="6" w="1" h="1">
+	</spinner>
+	<spinner nome="MCleft" x="1" y="5" w="1" h="1">
+	</spinner>
+	<spinner nome="MCright" x="3" y="5" w="1" h="1">
+	</spinner>
+	<spinner nome="MCtop" x="2" y="4" w="1" h="1">
+	</spinner>
+</raiz>

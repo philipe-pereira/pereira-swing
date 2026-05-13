@@ -12,8 +12,8 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import br.com.pereiraeng.swing.button.CoCaPanel;
 import br.com.pereiraeng.core.LocaleConfig;
+import br.com.pereiraeng.swing.button.CoCaPanel;
 
 /**
  * Classe dos objetos gráficos representando uma tela de acesso

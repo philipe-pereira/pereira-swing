@@ -11,9 +11,9 @@ import java.util.Map.Entry;
 import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
 
+import br.com.pereiraeng.core.TimeRefresh;
 import br.com.pereiraeng.math.DuplaV;
 import br.com.pereiraeng.swing.Leaf;
-import br.com.pereiraeng.core.TimeRefresh;
 
 /**
  * <p>

@@ -2,11 +2,10 @@ package br.com.pereiraeng.swing;
 
 import java.util.Collection;
 import java.util.Map.Entry;
-
-import br.com.pereiraeng.swing.interfaces.DesHT;
-
 import java.util.TreeMap;
 import java.util.TreeSet;
+
+import br.com.pereiraeng.swing.interfaces.DesHT;
 
 public abstract class LeafHTTG<T extends DesHT> extends LeafHT {
 	private static final long serialVersionUID = -2962652053713467591L;

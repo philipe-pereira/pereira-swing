@@ -1,7 +1,6 @@
 package br.com.pereiraeng.swing.input.time;
 
 import java.awt.Color;
-
 import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionEvent;

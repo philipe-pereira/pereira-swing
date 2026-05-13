@@ -13,10 +13,10 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
 
-import br.com.pereiraeng.swing.SwingUtils;
-import br.com.pereiraeng.swing.button.IDItablePanel;
 import br.com.pereiraeng.core.ReflectionUtils;
 import br.com.pereiraeng.icons.Icons;
+import br.com.pereiraeng.icons.PereiraIcon;
+import br.com.pereiraeng.swing.button.IDItablePanel;
 
 /**
  * <p>
@@ -59,9 +59,9 @@ public class ResizableTable extends JPanel implements ActionListener {
 		p.add(idi);
 
 		if (paste) {
-			JButton b = new JButton(Icons.loadUtilsIcon("Paste.gif"));
+			JButton b = new JButton(PereiraIcon.PASTE.create());
 			b.setActionCommand(PASTE);
-			b.setPreferredSize(SwingUtils.DIM_BUTTON_SMALL_ICON);
+			b.setPreferredSize(Icons.DIM_BUTTON_SMALL_ICON);
 			b.addActionListener(this);
 			p.add(b);
 		}

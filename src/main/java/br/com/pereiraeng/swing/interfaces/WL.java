@@ -1,5 +1,7 @@
 package br.com.pereiraeng.swing.interfaces;
 
+import br.com.pereiraeng.swing.LeafOM;
+
 /**
  * Interface de localização da janela, que permite a um objeto do tipo
  * {@link DesM DesM} calcular suas próprias coordenadas dentro do componente

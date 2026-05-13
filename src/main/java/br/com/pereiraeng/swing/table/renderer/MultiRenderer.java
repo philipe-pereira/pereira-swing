@@ -60,6 +60,7 @@ public class MultiRenderer extends RendererEditor
 				d = ((JTextComponent) c).getDocument();
 			} else if (c instanceof ParseableInput<?>) {
 				d = ((ParseableInput<?>) c).getDocument();
+				// TODO solução auto-incremental
 //				if (c instanceof ComplexInput) {
 //					Document d2 = ((ComplexInput) c).getDocument2();
 //					d2.putProperty(SwingUtils.TEXT, c);
@@ -82,6 +83,7 @@ public class MultiRenderer extends RendererEditor
 		} else if (c instanceof JComboBox) {
 			((JComboBox<?>) c).addActionListener(this);
 		}
+		// TODO solução auto-incremental
 //		else if (c instanceof ParametroInput) {
 //			((ParametroInput) c).addChangeListener(this);
 //		}
@@ -114,6 +116,7 @@ public class MultiRenderer extends RendererEditor
 			}
 			newValue = ((ButtonInput<?>) source).get();
 		} 
+		// TODO solução auto-incremental
 //		else if (source instanceof CoordinateInput)
 //			newValue = ((CoordinateInput) source).get();
 
@@ -136,6 +139,8 @@ public class MultiRenderer extends RendererEditor
 		} else if (source instanceof TimeInput) {
 			newValue = ((TimeInput) source).get();
 		}
+		
+		// TODO solução auto-incremental
 //		else if (source instanceof ParametroInput) {
 //			newValue = ((ParametroInput) source).get();
 //			stopEditing = false;

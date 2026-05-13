@@ -20,9 +20,9 @@ import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 
-import br.com.pereiraeng.io.FileType;
-import br.com.pereiraeng.core.StringUtils;
 import br.com.pereiraeng.core.Password;
+import br.com.pereiraeng.core.StringUtils;
+import br.com.pereiraeng.io.FileType;
 import br.com.pereiraeng.swing.DialogBox;
 import br.com.pereiraeng.swing.Grade;
 import br.com.pereiraeng.swing.button.CoCaPanel;

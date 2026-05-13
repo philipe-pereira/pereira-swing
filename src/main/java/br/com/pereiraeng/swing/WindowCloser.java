@@ -14,12 +14,20 @@ public class WindowCloser extends InternalFrameAdapter implements WindowListener
 	}
 
 	public void internalFrameClosed(InternalFrameEvent event) {
-		this.app.close();
+		try {
+			this.app.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
 	public void windowClosed(WindowEvent event) {
-		this.app.close();
+		try {
+			this.app.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override

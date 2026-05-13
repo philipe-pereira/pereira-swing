@@ -6,8 +6,8 @@ import javax.swing.JTable;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 
-import br.com.pereiraeng.swing.input.Input;
 import br.com.pereiraeng.core.EditableFields;
+import br.com.pereiraeng.swing.input.Input;
 
 /**
  * Classe do objeto gráfico de uma tabela editável com apenas uma coluna e com

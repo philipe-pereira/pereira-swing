@@ -4,7 +4,7 @@ import java.awt.Dimension;
 import java.awt.event.ActionListener;
 
 import br.com.pereiraeng.icons.Icons;
-import br.com.pereiraeng.swing.SwingUtils;
+import br.com.pereiraeng.icons.PereiraIcon;
 
 /**
  * Classe do objeto gráfico de um painel com os butões de avançar ou recuar
@@ -36,7 +36,7 @@ public class PNpanel extends PairButtonsPanel {
 	 *                   <code>false</code> na vertical
 	 */
 	public PNpanel(ActionListener listener, boolean horizontal) {
-		this(listener, "", horizontal, SwingUtils.DIM_BUTTON_SMALL_ICON);
+		this(listener, "", horizontal, Icons.DIM_BUTTON_SMALL_ICON);
 	}
 
 	/**
@@ -51,7 +51,7 @@ public class PNpanel extends PairButtonsPanel {
 	 *                      horizontal, senão na vertical
 	 */
 	public PNpanel(ActionListener listener, String prefixCommand, boolean horizontal) {
-		this(listener, prefixCommand, horizontal, SwingUtils.DIM_BUTTON_SMALL_ICON);
+		this(listener, prefixCommand, horizontal, Icons.DIM_BUTTON_SMALL_ICON);
 	}
 
 	/**
@@ -67,7 +67,7 @@ public class PNpanel extends PairButtonsPanel {
 	 * @param dimension     tamanho dos botões
 	 */
 	public PNpanel(ActionListener listener, String prefixCommand, boolean horizontal, Dimension dimension) {
-		super(listener, prefixCommand, Icons.UTILS_ICON_PATH + (horizontal ? "Previous" : "Up") + ".gif", PREVIOUS,
-				Icons.UTILS_ICON_PATH + (horizontal ? "Next" : "Down") + ".gif", NEXT, dimension);
+		super(listener, prefixCommand, (horizontal ? PereiraIcon.PREVIOUS : PereiraIcon.UP), PREVIOUS,
+				horizontal ? PereiraIcon.NEXT : PereiraIcon.DOWN, NEXT, dimension);
 	}
 }

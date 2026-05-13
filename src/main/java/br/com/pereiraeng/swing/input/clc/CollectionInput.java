@@ -17,8 +17,9 @@ import javax.swing.JScrollPane;
 import javax.swing.event.ListSelectionListener;
 
 import br.com.pereiraeng.core.ReflectionUtils;
-import br.com.pereiraeng.swing.SwingUtils;
+import br.com.pereiraeng.icons.Icons;
 import br.com.pereiraeng.swing.RequestFocusListener;
+import br.com.pereiraeng.swing.SwingUtils;
 import br.com.pereiraeng.swing.button.CUDpanel;
 import br.com.pereiraeng.swing.button.PasteListButton;
 import br.com.pereiraeng.swing.input.Input;
@@ -152,7 +153,7 @@ public abstract class CollectionInput<K, C extends Collection<K>> extends JPanel
 	 */
 	public void addPasteButton(int d) {
 		PasteListButton<K> plb = new PasteListButton<>(this.model, d);
-		plb.setPreferredSize(SwingUtils.DIM_BUTTON_ICON);
+		plb.setPreferredSize(Icons.DIM_BUTTON_ICON);
 		buttons.add(plb);
 	}
 

@@ -6,6 +6,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
+import br.com.pereiraeng.swing.EditionBox;
+
 /**
  * Classe do objeto gráfico de um botão que, ao ser pressionado, abre uma
  * {@link EditionBox caixa de diálogo} que permitirá a edição de um objeto

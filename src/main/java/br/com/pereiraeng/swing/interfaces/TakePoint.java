@@ -2,6 +2,8 @@ package br.com.pereiraeng.swing.interfaces;
 
 import java.awt.geom.Point2D;
 
+import br.com.pereiraeng.swing.LeafOM;
+
 /**
  * Interface das classes que precisam recuperar as coordenadas de um ponto
  * clicado sobre um {@link LeafOM painel gráfico}. Difere-se da interface

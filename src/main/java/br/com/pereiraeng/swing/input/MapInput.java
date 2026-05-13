@@ -7,8 +7,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import br.com.pereiraeng.swing.table.ResizableTable;
 import br.com.pereiraeng.core.ReflectionUtils;
+import br.com.pereiraeng.swing.table.ResizableTable;
 
 /**
  * Classe dos objetos gráfico que representam uma tabela com duas colunas para

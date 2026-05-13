@@ -18,8 +18,8 @@ import javax.swing.event.ChangeListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import br.com.pereiraeng.swing.Grade;
 import br.com.pereiraeng.core.ColorUtils;
+import br.com.pereiraeng.swing.Grade;
 
 /**
  * Classe dos objetos gráficos que permitem ao usuário o particionamento sobre

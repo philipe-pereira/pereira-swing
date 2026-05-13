@@ -7,7 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import br.com.pereiraeng.icons.Icons;
-import br.com.pereiraeng.swing.SwingUtils;
+import br.com.pereiraeng.icons.PereiraIcon;
 
 /**
  * Classe dos objetos gráficos de um conjunto de butões para
@@ -33,18 +33,19 @@ public class IDItablePanel extends JPanel {
 	public IDItablePanel(boolean column) {
 		super(new FlowLayout(FlowLayout.CENTER, 0, 0));
 
-		JButton b = new JButton(Icons.loadUtilsIcon("" + (column ? "Column" : "Row") + "InsertBefore24.gif"));
-		b.setPreferredSize(SwingUtils.DIM_BUTTON_SMALL_ICON);
+		JButton b = new JButton(
+				column ? PereiraIcon.COLUMN_INSERT_BEFORE.create() : PereiraIcon.ROW_INSERT_BEFORE.create());
+		b.setPreferredSize(Icons.DIM_BUTTON_SMALL_ICON);
 		b.setActionCommand(BEFORE);
 		add(b);
 
-		b = new JButton(Icons.loadUtilsIcon("" + (column ? "Column" : "Row") + "Delete24.gif"));
-		b.setPreferredSize(SwingUtils.DIM_BUTTON_SMALL_ICON);
+		b = new JButton(column ? PereiraIcon.COLUMN_DELETE.create() : PereiraIcon.ROW_DELETE.create());
+		b.setPreferredSize(Icons.DIM_BUTTON_SMALL_ICON);
 		b.setActionCommand(DELETE);
 		add(b);
 
-		b = new JButton(Icons.loadUtilsIcon("" + (column ? "Column" : "Row") + "InsertAfter24.gif"));
-		b.setPreferredSize(SwingUtils.DIM_BUTTON_SMALL_ICON);
+		b = new JButton(column ? PereiraIcon.COLUMN_INSERT_AFTER.create() : PereiraIcon.ROW_INSERT_AFTER.create());
+		b.setPreferredSize(Icons.DIM_BUTTON_SMALL_ICON);
 		b.setActionCommand(AFTER);
 		add(b);
 	}

@@ -12,8 +12,8 @@ import javax.swing.JPanel;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerDateModel;
 
-import br.com.pereiraeng.swing.input.Input;
 import br.com.pereiraeng.core.TimeUtils;
+import br.com.pereiraeng.swing.input.Input;
 
 /**
  * Componente para inserção e edição de horas e minutos

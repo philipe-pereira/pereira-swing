@@ -1,5 +1,7 @@
 package br.com.pereiraeng.swing.interfaces;
 
+import br.com.pereiraeng.swing.LeafOM;
+
 /**
  * Interface das classes que precisam recuperar as coordenadas de um ponto
  * quando do deslocamento do mouse sobre um {@link LeafOM painel gráfico}.

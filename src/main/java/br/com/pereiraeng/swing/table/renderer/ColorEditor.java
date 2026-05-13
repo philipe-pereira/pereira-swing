@@ -1,5 +1,10 @@
 package br.com.pereiraeng.swing.table.renderer;
 
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /*
  * Copyright (c) 1995, 2008, Oracle and/or its affiliates. All rights reserved.
  *
@@ -37,15 +42,11 @@ package br.com.pereiraeng.swing.table.renderer;
  */
 
 import javax.swing.AbstractCellEditor;
-import javax.swing.table.TableCellEditor;
 import javax.swing.JButton;
 import javax.swing.JColorChooser;
 import javax.swing.JDialog;
 import javax.swing.JTable;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.table.TableCellEditor;
 
 public class ColorEditor extends AbstractCellEditor implements TableCellEditor, ActionListener {
 	private static final long serialVersionUID = 1L;

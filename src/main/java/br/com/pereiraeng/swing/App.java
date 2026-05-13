@@ -21,7 +21,7 @@ import java.awt.Dimension;
  * @author Philipe PEREIRA
  *
  */
-public interface App {
+public interface App extends AutoCloseable {
 	/**
 	 * Função que contrói sobre um dado componente a tela do aplicativo
 	 * 
@@ -74,9 +74,4 @@ public interface App {
 	 * a função {@link #open(String) open}.
 	 */
 	public void start();
-
-	/**
-	 * Função que organiza o fechamento do aplicativo
-	 */
-	public void close();
 }

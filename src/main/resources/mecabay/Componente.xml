@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE xml>
+<raiz top="0" right="0" bottom="0" left="0">
+	<spinner nome="wSpinner" x="4" y="3" w="1" h="1">
+		<step>1</step>
+		<valor_max>9</valor_max>
+		<valor_min>1</valor_min>
+	</spinner>
+	<texto nome="nome" x="0" y="2" w="5" h="1">
+		<colunas>15</colunas>
+		<b>true</b>
+	</texto>
+	<label nome="l4" x="3" y="4" w="1" h="1">
+		<texto_valor_1>h</texto_valor_1>
+	</label>
+	<label nome="l3" x="3" y="3" w="1" h="1">
+		<texto_valor_1>w</texto_valor_1>
+	</label>
+	<label nome="l2" x="0" y="4" w="1" h="1">
+		<texto_valor_1>y</texto_valor_1>
+	</label>
+	<label nome="l1" x="0" y="3" w="1" h="1">
+		<texto_valor_1>x</texto_valor_1>
+	</label>
+	<spinner nome="ySpinner" x="1" y="4" w="1" h="1">
+		<step>1</step>
+		<valor_max>9</valor_max>
+		<valor_min>0</valor_min>
+	</spinner>
+	<label nome="tipo" x="0" y="0" w="5" h="1">
+		<ah>CENTRO</ah>
+		<b>true</b>
+	</label>
+	<separador nome="s3" x="0" y="5" w="5" h="1">
+		<direcao>HORIZONTAL</direcao>
+	</separador>
+	<spinner nome="hSpinner" x="4" y="4" w="1" h="1">
+		<step>1</step>
+		<valor_max>9</valor_max>
+		<valor_min>1</valor_min>
+	</spinner>
+	<separador nome="s2" x="2" y="3" w="1" h="2">
+		<direcao>VERTICAL</direcao>
+	</separador>
+	<separador nome="s1" x="0" y="1" w="5" h="1">
+		<direcao>HORIZONTAL</direcao>
+	</separador>
+	<spinner nome="xSpinner" x="1" y="3" w="1" h="1">
+		<step>1</step>
+		<valor_max>9</valor_max>
+		<valor_min>0</valor_min>
+	</spinner>
+</raiz>

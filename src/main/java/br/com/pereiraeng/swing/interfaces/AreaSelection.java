@@ -2,6 +2,8 @@ package br.com.pereiraeng.swing.interfaces;
 
 import java.awt.geom.Point2D;
 
+import br.com.pereiraeng.swing.LeafO;
+
 /**
  * Interface das classes que precisam recuperar as coordenadas de uma retângulo
  * selecionado sobre um {@link LeafO painel gráfico}

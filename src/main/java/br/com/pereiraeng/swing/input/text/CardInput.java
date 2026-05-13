@@ -1,5 +1,7 @@
 package br.com.pereiraeng.swing.input.text;
 
+import javax.swing.JTextArea;
+
 import br.com.pereiraeng.swing.MonoSpacedFont;
 import br.com.pereiraeng.swing.text.ColumnsTextArea;
 

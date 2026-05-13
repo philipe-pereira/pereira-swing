@@ -1,6 +1,5 @@
 package br.com.pereiraeng.swing;
 
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.SplashScreen;
@@ -336,7 +335,7 @@ public class Janela extends JFrame {
 	 * @param args
 	 *            sequência de caracteres para a abertura de arquivos
 	 */
-	public static <K> Component startAlone(App app, String... args) {
+	public static <K> Janela startAlone(App app, String... args) {
 		Janela janela = new Janela(app.getTitle(), app.getWindowSize());
 
 		if (app instanceof LnF)

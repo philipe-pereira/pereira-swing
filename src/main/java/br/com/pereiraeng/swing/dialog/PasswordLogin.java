@@ -15,12 +15,12 @@ import javax.swing.JPasswordField;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 
-import br.com.pereiraeng.swing.DialogBox;
-import br.com.pereiraeng.swing.Grade;
-import br.com.pereiraeng.swing.button.CoCaPanel;
 import br.com.pereiraeng.core.LocaleConfig;
 import br.com.pereiraeng.core.Password;
 import br.com.pereiraeng.core.User;
+import br.com.pereiraeng.swing.DialogBox;
+import br.com.pereiraeng.swing.Grade;
+import br.com.pereiraeng.swing.button.CoCaPanel;
 
 public class PasswordLogin extends DialogBox implements ActionListener, KeyListener {
 	private static final long serialVersionUID = 1L;

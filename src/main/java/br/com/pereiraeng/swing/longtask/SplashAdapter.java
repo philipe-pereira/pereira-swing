@@ -5,7 +5,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.SplashScreen;
 
-public class SplashAdapter {
+public class SplashAdapter implements AutoCloseable {
 
 	private SplashScreen splash;
 
@@ -28,6 +28,7 @@ public class SplashAdapter {
 		}
 	}
 
+	@Override
 	public void close() {
 		if (splash != null ? splash.isVisible() : false)
 			splash.close();

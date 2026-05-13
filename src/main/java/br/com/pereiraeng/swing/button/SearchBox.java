@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import br.com.pereiraeng.icons.Icons;
-import br.com.pereiraeng.swing.SwingUtils;
+import br.com.pereiraeng.icons.PereiraIcon;
 
 /**
  * Classe do objeto gráfico de de uma caixa de texto com um botão de busca. As
@@ -31,8 +31,8 @@ public class SearchBox extends JPanel implements ActionListener, KeyListener {
 		tf.addKeyListener(this);
 		add(tf);
 
-		JButton b = new JButton(Icons.loadUtilsIcon("Zoom24.gif"));
-		b.setPreferredSize(SwingUtils.DIM_BUTTON_SMALL_ICON);
+		JButton b = new JButton(PereiraIcon.ZOOM.create());
+		b.setPreferredSize(Icons.DIM_BUTTON_SMALL_ICON);
 		b.addActionListener(this);
 		add(b);
 	}

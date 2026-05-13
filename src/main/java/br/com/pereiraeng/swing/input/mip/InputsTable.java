@@ -17,10 +17,10 @@ import javax.swing.table.JTableHeader;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
 
+import br.com.pereiraeng.core.ReflectionUtils;
 import br.com.pereiraeng.swing.SwingUtils;
 import br.com.pereiraeng.swing.input.Input;
 import br.com.pereiraeng.swing.table.AdvancedTableModel;
-import br.com.pereiraeng.core.ReflectionUtils;
 
 /**
  * Tabela que contém somente uma linha sendo que cada célula é uma objeto

@@ -68,6 +68,8 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 
+import br.com.pereiraeng.core.LocaleConfig;
+import br.com.pereiraeng.icons.Icons;
 import br.com.pereiraeng.swing.input.ArrayInput;
 import br.com.pereiraeng.swing.input.ButtonInput;
 import br.com.pereiraeng.swing.input.ColorInput;
@@ -81,13 +83,8 @@ import br.com.pereiraeng.swing.input.mtz.MatrizInput;
 import br.com.pereiraeng.swing.input.time.DateInput;
 import br.com.pereiraeng.swing.input.time.TimeInput;
 import br.com.pereiraeng.swing.table.AdvancedTableModel;
-import br.com.pereiraeng.core.LocaleConfig;
-import br.com.pereiraeng.icons.Icons;
 
 public class SwingUtils {
-
-	public static final Dimension DIM_BUTTON_ICON = new Dimension(34, 34),
-			DIM_BUTTON_SMALL_ICON = new Dimension(27, 27), DIM_BUTTON_VERT_SMALL_ICON = new Dimension(20, 20);
 
 	public static final int SCROLL = 18;
 
@@ -221,8 +218,7 @@ public class SwingUtils {
 
 		for (String[][] b : buttons) {
 			for (String[] c : b) {
-				JMenuItem mi = new JMenuItem(LocaleConfig.getString(c[1]),
-						Icons.loadIcon((imagesFolder + "/" + c[0])));
+				JMenuItem mi = new JMenuItem(LocaleConfig.getString(c[1]), Icons.loadIcon((imagesFolder + "/" + c[0])));
 				mi.setActionCommand(c[1]);
 				mi.addActionListener(listener);
 				popup.add(mi);
@@ -579,68 +575,63 @@ public class SwingUtils {
 
 	/**
 	 * Função que retorna uma barra de butões, estando estes separados conforme o
-	 * agrupamento dos vetores, ilustrados com ícones (extraída na biblioteca
-	 * utilitária) e com o <code>String</code> action adicionado.
+	 * agrupamento dos vetores, ilustrados com ícones e com o <code>String</code>
+	 * command action adicionado.
 	 * 
-	 * @param buttons  vetor de três dimensões de <code>String</code>, sendo a
-	 *                 primeira dimensão a separação dos grupos de butões, a segunda
-	 *                 os diferentes butões de um mesmo agrupamento e a terceira:
+	 * @param buttons  vetor de três dimensões de <code>String</code>:
+	 *                 <ol>
+	 *                 <li>a primeira dimensão a separação dos grupos de butões
+	 *                 (introduz-se uma separador);</li>
+	 *                 <li>a segunda os diferentes butões de um mesmo
+	 *                 agrupamento;</li>
+	 *                 <li>e a terceira são os atributos:
 	 *                 <ol start="0">
-	 *                 <li>o nome do arquivo de imagem (ou o texto do botão);</i>
+	 *                 <li>o nome do arquivo de imagem ou o texto a ser exibido;
+	 *                 <ul>
+	 *                 <li>imagens são identificadas pelas terminações (gif, png ou
+	 *                 jpg) ou pelo identificador de coleção ':';</li>
+	 *                 <li>se não for uma imagem, é considerado um texto.</li>
+	 *                 </ul>
+	 *                 </i>
 	 *                 <li>o comando de ação;</i>
 	 *                 <li>(opcional) tool tip.</i>
+	 *                 </ol>
+	 *                 </li>
 	 *                 </ol>
 	 * @param listener escutador a ser adicionado a todos os butões criados.
 	 * @return a barra <code>JToolBar</code> criada
 	 */
 	public static JToolBar getBar(String[][][] buttons, ActionListener listener) {
-		return getBar(Icons.UTILS_ICON_PATH, buttons, listener);
-	}
-
-	/**
-	 * Função que retorna uma barra de butões, estando estes separados conforme o
-	 * agrupamento dos vetores, ilustrados com ícones e com o <code>String</code>
-	 * command action adicionado.
-	 * 
-	 * @param imagesFolder caminho da pasta onde se encontram os ícones dos butões
-	 * @param buttons      vetor de três dimensões de <code>String</code>, sendo a
-	 *                     primeira dimensão a separação dos grupos de butões, a
-	 *                     segunda os diferentes butões de um mesmo agrupamento e a
-	 *                     terceira:
-	 *                     <ol start="0">
-	 *                     <li>o nome do arquivo de imagem (ou o texto do
-	 *                     botão);</i>
-	 *                     <li>o comando de ação;</i>
-	 *                     <li>(opcional) tool tip.</i>
-	 *                     </ol>
-	 * @param listener     escutador a ser adicionado a todos os butões criados.
-	 * @return a barra <code>JToolBar</code> criada
-	 */
-	public static JToolBar getBar(String imagesFolder, String[][][] buttons, ActionListener listener) {
 		JToolBar bar = new JToolBar();
-
-		if (imagesFolder.length() > 0 ? !imagesFolder.endsWith("/") : false)
-			imagesFolder += "/";
 
 		for (String[][] group : buttons) {
 			if (bar.getComponentCount() != 0)
 				bar.addSeparator();
 			for (String[] buttonData : group) {
 				JButton button = new JButton();
-				if (buttonData[0].endsWith(".gif") || buttonData[0].endsWith(".png")
-						|| buttonData[0].endsWith(".jpg")) {
-					String str = imagesFolder + buttonData[0];
-					ImageIcon ii = Icons.loadIcon(str);
-					if (ii != null)
-						button.setIcon(ii);
-				} else {
+
+				// aparência
+				ImageIcon imageIcon = null;
+				if (buttonData[0].endsWith(".gif") || buttonData[0].endsWith(".png") || buttonData[0].endsWith(".jpg")
+						|| buttonData[0].contains(":")) {
+					imageIcon = Icons.getIcon(buttonData[0]);
+				}
+
+				if (imageIcon != null)
+					button.setIcon(imageIcon);
+				else {
 					button.setText(buttonData[0]);
 					button.setFont(new Font(Font.DIALOG, Font.PLAIN, 18));
 				}
+
+				// responsividade
 				button.setActionCommand(buttonData[1]);
+				button.addActionListener(listener);
+
+				// descrição
 				if (buttonData.length > 2)
 					button.setToolTipText(buttonData[2]);
-				button.addActionListener(listener);
+
 				bar.add(button);
 			}
 		}

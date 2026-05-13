@@ -13,8 +13,8 @@ import javax.swing.SpinnerDateModel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import br.com.pereiraeng.swing.input.Input;
 import br.com.pereiraeng.core.TimeUtils;
+import br.com.pereiraeng.swing.input.Input;
 
 /**
  * Classe do objeto gráfico que permite a seleção de uma faixa horária

@@ -8,9 +8,9 @@ import java.io.File;
 
 import javax.swing.JButton;
 
+import br.com.pereiraeng.core.LocaleConfig;
 import br.com.pereiraeng.io.FileType;
 import br.com.pereiraeng.swing.input.Input;
-import br.com.pereiraeng.core.LocaleConfig;
 
 
 /**

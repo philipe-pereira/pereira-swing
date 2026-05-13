@@ -10,10 +10,10 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+import br.com.pereiraeng.core.collections.ArrayUtils;
 import br.com.pereiraeng.io.FileType;
 import br.com.pereiraeng.io.IOutils;
 import br.com.pereiraeng.swing.SwingUtils;
-import br.com.pereiraeng.core.collections.ArrayUtils;
 
 public class FileScreen extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -71,11 +71,12 @@ public class FileScreen extends JPanel {
 					;
 
 				// dados do arquivo (na forma de uma tabela)
-				// e oferecer para abrir fora do programa
+				// e oferecer para abrir fora do programa, e remover o check not null abaixo
 				// TODO
 				break;
 			}
-			super.add(comp, ft.name());
+			if (comp != null)
+				super.add(comp, ft.name());
 		}
 	}
 

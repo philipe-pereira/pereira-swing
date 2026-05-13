@@ -14,6 +14,10 @@ public abstract class AppAp extends JApplet implements App {
 
 	@Override
 	public void destroy() {
-		close();
+		try {
+			close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

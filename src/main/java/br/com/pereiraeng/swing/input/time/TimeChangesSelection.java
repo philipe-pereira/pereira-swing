@@ -10,8 +10,8 @@ import javax.swing.JRadioButton;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerDateModel;
 
-import br.com.pereiraeng.swing.Grade;
 import br.com.pereiraeng.core.TimeUtils;
+import br.com.pereiraeng.swing.Grade;
 
 public class TimeChangesSelection extends Grade {
 	private static final long serialVersionUID = 1L;

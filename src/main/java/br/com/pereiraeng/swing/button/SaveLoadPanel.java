@@ -7,7 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import br.com.pereiraeng.icons.Icons;
-import br.com.pereiraeng.swing.SwingUtils;
+import br.com.pereiraeng.icons.PereiraIcon;
 
 public class SaveLoadPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -19,15 +19,15 @@ public class SaveLoadPanel extends JPanel {
 	public SaveLoadPanel(ActionListener listener) {
 		super(new FlowLayout(FlowLayout.CENTER, 0, 0));
 
-		JButton b = new JButton(Icons.loadUtilsIcon("Open.gif"));
-		b.setPreferredSize(SwingUtils.DIM_BUTTON_ICON);
+		JButton b = new JButton(PereiraIcon.OPEN.create());
+		b.setPreferredSize(Icons.DIM_BUTTON_ICON);
 		b.setActionCommand(LOAD);
 		b.addActionListener(listener);
 		b.setToolTipText("Carregar");
 		add(b);
 
-		b = new JButton(Icons.loadUtilsIcon("Save.gif"));
-		b.setPreferredSize(SwingUtils.DIM_BUTTON_ICON);
+		b = new JButton(PereiraIcon.SAVE.create());
+		b.setPreferredSize(Icons.DIM_BUTTON_ICON);
 		b.setActionCommand(SAVE);
 		b.addActionListener(listener);
 		b.setToolTipText("Salvar");

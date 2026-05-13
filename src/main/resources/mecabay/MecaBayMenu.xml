@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE xml>
+<barra_Menu>
+	<menu name="file">
+		<sub_Menu name="new" icon="br.com.pereiraeng.icons.PereiraIcon:NEW" action="new" />
+		<sub_Menu name="open" icon="br.com.pereiraeng.icons.PereiraIcon:OPEN" action="open" />
+		<sub_Menu name="save" icon="br.com.pereiraeng.icons.PereiraIcon:SAVE" action="save" />
+		<sub_Menu name="saveAs" icon="br.com.pereiraeng.icons.PereiraIcon:SAVE_AS"
+			action="saveAs" />
+		<separador />
+		<sub_Menu name="exit" action="exit" />
+	</menu>
+</barra_Menu>

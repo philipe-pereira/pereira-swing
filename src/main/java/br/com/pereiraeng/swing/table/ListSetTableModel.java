@@ -5,9 +5,9 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
-import br.com.pereiraeng.core.collections.ListUtils;
 import br.com.pereiraeng.core.DisplayableFields;
 import br.com.pereiraeng.core.EditableFields;
+import br.com.pereiraeng.core.collections.ListUtils;
 
 /**
  * Classe do objeto do modelo de uma tabela em que cada linha da tabela é o

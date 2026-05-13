@@ -2,7 +2,6 @@ package br.com.pereiraeng.swing;
 
 import java.awt.Component;
 import java.awt.event.ActionListener;
-import java.io.File;
 import java.io.InputStream;
 import java.util.Stack;
 
@@ -34,6 +33,10 @@ import br.com.pereiraeng.xml.XMLadapter;
  *
  */
 public class XMLmenuBarReader extends XMLadapter {
+
+	private enum TipoMenu {
+		BARRA_MENU, POPUP, MENU, SUB_MENU, RADIO_MENU, CHECK_MENU, LABEL, SEPARADOR;
+	}
 
 	private JPopupMenu popUp;
 	private JMenuBar menuBar;
@@ -80,10 +83,6 @@ public class XMLmenuBarReader extends XMLadapter {
 		return this.popUp;
 	}
 
-	private enum TipoMenu {
-		BARRA_MENU, POPUP, MENU, SUB_MENU, RADIO_MENU, CHECK_MENU, LABEL, SEPARADOR;
-	}
-
 	// =============================== LEITURA ===============================
 
 	private transient TipoMenu type;
@@ -120,12 +119,9 @@ public class XMLmenuBarReader extends XMLadapter {
 				String label = atts.getValue("name");
 				item = new JMenu(LocaleConfig.getString(label));
 
-				String icon = atts.getValue("icon");
-				if (icon != null) {
-					ImageIcon ii = Icons.loadIcon(icon);
-					if (ii != null)
-						item.setIcon(ii);
-				}
+				ImageIcon imageIcon = Icons.getIcon(atts.getValue("icon"));
+				if (imageIcon != null)
+					item.setIcon(imageIcon);
 
 				String enable = atts.getValue("enable");
 				if (enable != null)
@@ -163,18 +159,9 @@ public class XMLmenuBarReader extends XMLadapter {
 				item.setActionCommand(action);
 				item.addActionListener(listener);
 
-				icon = atts.getValue("icon");
-				ImageIcon ii = null;
-				if (icon != null) {
-					ii = Icons.loadIcon(icon);
-					if (ii == null) {
-						File file = new File(icon);
-						if (file.exists())
-							ii = new ImageIcon(file.getAbsolutePath());
-					}
-				}
-				if (ii != null)
-					item.setIcon(ii);
+				imageIcon = Icons.getIcon(atts.getValue("icon"));
+				if (imageIcon != null)
+					item.setIcon(imageIcon);
 
 				enable = atts.getValue("enable");
 				if (enable != null)
@@ -192,18 +179,9 @@ public class XMLmenuBarReader extends XMLadapter {
 				item.addActionListener(listener);
 				item.setSelected(Boolean.parseBoolean(atts.getValue("state")));
 
-				icon = atts.getValue("icon");
-				ii = null;
-				if (icon != null) {
-					ii = Icons.loadIcon(icon);
-					if (ii == null) {
-						File file = new File(icon);
-						if (file.exists())
-							ii = new ImageIcon(file.getAbsolutePath());
-					}
-				}
-				if (ii != null)
-					item.setIcon(ii);
+				imageIcon = Icons.getIcon(atts.getValue("icon"));
+				if (imageIcon != null)
+					item.setIcon(imageIcon);
 
 				comp.add(item);
 				break;
@@ -223,14 +201,14 @@ public class XMLmenuBarReader extends XMLadapter {
 
 	@Override
 	public void endElement(String qName) {
-		TipoMenu t = null;
+		TipoMenu tipo = null;
 		try {
-			t = TipoMenu.valueOf(qName.toUpperCase());
+			tipo = TipoMenu.valueOf(qName.toUpperCase());
 		} catch (IllegalArgumentException exception) {
 			System.err.println("unknown type '" + qName + "'");
 		}
 
-		this.type = t;
+		this.type = tipo;
 		if (this.type != null) {
 			switch (this.type) {
 			case MENU:

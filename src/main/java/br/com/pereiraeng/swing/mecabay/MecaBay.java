@@ -28,11 +28,12 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.AbstractTableModel;
 
+import br.com.pereiraeng.io.IOutils;
 import br.com.pereiraeng.math.Scale2Di;
 import br.com.pereiraeng.swing.App;
 import br.com.pereiraeng.swing.Grade;
-import br.com.pereiraeng.swing.SwingUtils;
 import br.com.pereiraeng.swing.LeafOG;
+import br.com.pereiraeng.swing.SwingUtils;
 import br.com.pereiraeng.swing.XMLmenuBarReader;
 import br.com.pereiraeng.swing.input.file.FileChooser;
 import br.com.pereiraeng.swing.input.file.FileFilterAdapter;
@@ -44,7 +45,6 @@ import br.com.pereiraeng.swing.scroll.JanelaRolavel;
 import br.com.pereiraeng.swing.scroll.Quina;
 import br.com.pereiraeng.swing.scroll.ReguaDiscreta;
 import br.com.pereiraeng.swing.table.EditableTable;
-import br.com.pereiraeng.io.IOutils;
 
 public class MecaBay implements InterfaceGrade, App, ActionListener, ChangeListener, CaretListener, TableModelListener {
 	private JInternalFrame frame;

@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import javax.swing.AbstractSpinnerModel;
+import javax.swing.event.ChangeEvent;
 
 public class CyclingSpinnerListModel extends AbstractSpinnerModel {
 	private static final long serialVersionUID = 1L;

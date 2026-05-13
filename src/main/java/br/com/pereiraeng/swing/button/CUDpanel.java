@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import br.com.pereiraeng.icons.Icons;
-import br.com.pereiraeng.swing.SwingUtils;
+import br.com.pereiraeng.icons.PereiraIcon;
 
 /**
  * Componente que contém os três butões associados às operações básicas de
@@ -65,20 +65,20 @@ public class CUDpanel extends JPanel {
 	public CUDpanel(boolean edition, ActionListener listener, boolean mini) {
 		super(new FlowLayout(FlowLayout.CENTER, 0, 0));
 
-		create = new JButton(Icons.loadUtilsIcon("New.gif"));
+		create = new JButton(PereiraIcon.NEW.create());
 		create.setActionCommand(NEW);
-		create.setPreferredSize(mini ? SwingUtils.DIM_BUTTON_VERT_SMALL_ICON : SwingUtils.DIM_BUTTON_ICON);
+		create.setPreferredSize(mini ? Icons.DIM_BUTTON_VERT_SMALL_ICON : Icons.DIM_BUTTON_ICON);
 		add(create);
 
-		update = new JButton(Icons.loadUtilsIcon("Edit.gif"));
+		update = new JButton(PereiraIcon.EDIT.create());
 		update.setActionCommand(EDIT);
-		update.setPreferredSize(mini ? SwingUtils.DIM_BUTTON_VERT_SMALL_ICON : SwingUtils.DIM_BUTTON_ICON);
+		update.setPreferredSize(mini ? Icons.DIM_BUTTON_VERT_SMALL_ICON : Icons.DIM_BUTTON_ICON);
 		add(update);
 		setEditable(edition);
 
-		delete = new JButton(Icons.loadUtilsIcon(("Delete.gif")));
+		delete = new JButton(PereiraIcon.DELETE.create());
 		delete.setActionCommand(DELETE);
-		delete.setPreferredSize(mini ? SwingUtils.DIM_BUTTON_VERT_SMALL_ICON : SwingUtils.DIM_BUTTON_ICON);
+		delete.setPreferredSize(mini ? Icons.DIM_BUTTON_VERT_SMALL_ICON : Icons.DIM_BUTTON_ICON);
 		add(delete);
 
 		if (listener != null)

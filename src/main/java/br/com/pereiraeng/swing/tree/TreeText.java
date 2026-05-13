@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -21,6 +23,9 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 
+import br.com.pereiraeng.core.LocaleConfig;
+import br.com.pereiraeng.core.collections.ArrayUtils;
+import br.com.pereiraeng.icons.PereiraIcon;
 import br.com.pereiraeng.io.FileType;
 import br.com.pereiraeng.io.IOutils;
 import br.com.pereiraeng.swing.SwingUtils;
@@ -30,9 +35,6 @@ import br.com.pereiraeng.swing.input.cod.Formatter;
 import br.com.pereiraeng.swing.input.cod.Sintax;
 import br.com.pereiraeng.swing.input.file.FileChooser;
 import br.com.pereiraeng.swing.input.file.FileFilterAdapter;
-import br.com.pereiraeng.core.collections.ArrayUtils;
-import br.com.pereiraeng.icons.Icons;
-import br.com.pereiraeng.core.LocaleConfig;
 
 /**
  * Componente composto de uma árvore onde cada nó, ao ser clicado, exibe um
@@ -48,7 +50,11 @@ public class TreeText extends JPanel implements ActionListener, TreeSelectionLis
 
 	public static final String SAVE = "save";
 
+	private static final String RESOURCES = "[resources]";
+
 	private String folder;
+
+	private boolean resources = false;
 
 	// ------------------------------------------
 
@@ -92,7 +98,7 @@ public class TreeText extends JPanel implements ActionListener, TreeSelectionLis
 		editionPane.add(new FourDirectionsPanel(this));
 		editionPane.add(new CUDpanel(this));
 
-		JButton b = new JButton(Icons.loadUtilsIcon("Open.gif"));
+		JButton b = new JButton(PereiraIcon.OPEN.create());
 		b.addActionListener(this);
 		b.setToolTipText("Adicionar diretório");
 		b.setActionCommand("ADD");
@@ -116,6 +122,10 @@ public class TreeText extends JPanel implements ActionListener, TreeSelectionLis
 	public void set(DefaultMutableTreeNode root) {
 		this.treeModel.setRoot(root);
 		this.folder = ((String[]) root.getUserObject())[1];
+		if (this.folder.startsWith(RESOURCES)) {
+			resources = true;
+			this.folder = this.folder.substring(RESOURCES.length());
+		}
 	}
 
 	/**
@@ -125,7 +135,11 @@ public class TreeText extends JPanel implements ActionListener, TreeSelectionLis
 	 *                 <code>false</code> para se proibir
 	 */
 	public void setEditionMode(boolean editable) {
-		editionPane.setVisible(editable);
+		if (editable && resources)
+			JOptionPane.showMessageDialog(this, "Não é possível editar quando os arquivos estão na pasta 'resources'.",
+					"Arquivo em resources", JOptionPane.WARNING_MESSAGE);
+		else
+			editionPane.setVisible(editable);
 	}
 
 	/**
@@ -202,8 +216,7 @@ public class TreeText extends JPanel implements ActionListener, TreeSelectionLis
 				DefaultMutableTreeNode node = (DefaultMutableTreeNode) tree.getSelectionPath().getLastPathComponent();
 				String[] content = (String[]) node.getUserObject();
 				switch (opt) {
-				case 0:
-					// alterar nome do nó
+				case 0: // alterar nome do nó
 					String newName = (String) JOptionPane.showInputDialog(this, LocaleConfig.getString("renameNode"),
 							LocaleConfig.getString("renameNodeTitle"), JOptionPane.PLAIN_MESSAGE, null, null,
 							content[0]);
@@ -282,24 +295,43 @@ public class TreeText extends JPanel implements ActionListener, TreeSelectionLis
 	public void valueChanged(TreeSelectionEvent event) {
 		// ao se selecionar um nó da árvore
 
-		TreePath tp = event.getNewLeadSelectionPath();
-		if (tp != null) {
-			File file = new File(this.folder + File.separatorChar
-					+ ((String[]) ((DefaultMutableTreeNode) tp.getLastPathComponent()).getUserObject())[1]);
-			String extension = IOutils.getExtension(file);
-			if (file.exists() && extension != null) {
+		TreePath treePath = event.getNewLeadSelectionPath();
+		if (treePath != null) {
+			String filename = ((String[]) ((DefaultMutableTreeNode) treePath.getLastPathComponent())
+					.getUserObject())[1];
+
+			String filepath = filename;
+			if (!this.folder.isEmpty())
+				filepath = this.folder + File.separatorChar + filepath;
+
+			URL url = null;
+			File file = null;
+			if (this.resources)
+				url = ClassLoader.getSystemResource(filepath);
+			else {
+				file = new File(filepath);
+				try {
+					url = file.toURI().toURL();
+				} catch (MalformedURLException e) {
+					e.printStackTrace();
+				}
+			}
+
+			String extension = filename.substring(filename.lastIndexOf('.') + 1).toLowerCase();
+			if (extension != null) {
 				switch (extension) {
 				case "html":
 					try {
+						text.setContentType("text/html");
 						if (text.getPage() != null)
 							text.getDocument().putProperty(Document.StreamDescriptionProperty, null);
-						text.setPage(file.toURI().toURL());
+						text.setPage(url);
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
 					break;
 				case "txt":
-					text.setText(IOutils.readFile(file));
+					text.setText(IOutils.readFileFromUrl(url));
 					break;
 				case "tex":
 					File tmpTex = new File("temp/tmpTex.html");
@@ -315,15 +347,14 @@ public class TreeText extends JPanel implements ActionListener, TreeSelectionLis
 						e.printStackTrace();
 					}
 					break;
-				default:
-					// linguagem de marcação
+				default: // linguagem de marcação
 					Sintax sintax = null;
 					try {
 						sintax = Sintax.valueOf(extension.toUpperCase());
 					} catch (IllegalArgumentException e) {
 					}
 					if (sintax != null) {
-						text.setText(IOutils.readFile2(file));
+						text.setText(IOutils.readFileFromUrl(url));
 						(new Formatter(text, sintax)).format();
 					} else {
 						text.setText(null);

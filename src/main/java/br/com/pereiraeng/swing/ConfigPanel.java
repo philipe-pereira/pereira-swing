@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JSeparator;
 
-import br.com.pereiraeng.icons.Icons;
+import br.com.pereiraeng.icons.PereiraIcon;
 
 public class ConfigPanel extends Grade implements ActionListener {
 	private static final long serialVersionUID = 1L;
@@ -38,7 +38,7 @@ public class ConfigPanel extends Grade implements ActionListener {
 
 		int i = 0;
 
-		JButton b = new JButton("Excluir conta", Icons.loadUtilsIcon("close.png"));
+		JButton b = new JButton("Excluir conta", PereiraIcon.CLOSE.create());
 		b.setActionCommand(String.valueOf(DELETE));
 		b.addActionListener(this.listener);
 		add(b, 0, i++, 2, 1);
@@ -65,7 +65,7 @@ public class ConfigPanel extends Grade implements ActionListener {
 
 		add(new JSeparator(), 0, i++, 2, 1);
 
-		b = new JButton(Icons.loadUtilsIcon("return.gif"));
+		b = new JButton(PereiraIcon.RETURN.create());
 		b.setActionCommand(command);
 		b.addActionListener(this.listener);
 		add(b, 0, 50, 2, 1);

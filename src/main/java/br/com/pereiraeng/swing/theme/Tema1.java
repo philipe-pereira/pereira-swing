@@ -22,7 +22,7 @@ public class Tema1 extends DefaultMetalTheme {
 	/* CORES DOS TEXTOS */
 	/********************/
 
-	// COR DOS TEXTOS DOS BUT�ES, TABELAS, ABAS, MAS NÃO DOS DO MENU
+	// COR DOS TEXTOS DOS BUTÕES, TABELAS, ABAS, MAS NÃO DOS DO MENU
 	private Color a = Color.WHITE;
 
 	// COR DO TEXTO QUANDO SELECIONADO
@@ -58,13 +58,13 @@ public class Tema1 extends DefaultMetalTheme {
 	/* CORES DOS FUNDOS */
 	/********************/
 
-	// PRINCIPAL - PANELS, BUT�ES
+	// PRINCIPAL - PANELS, BUTÕES
 	private Color b = Color.BLACK;
 
 	// FUNDO DA BARRA DE MENU
 	private Color j = Color.BLACK;
 
-	// FUNDO DO BUT�O DO MENU QUANDO SELECIONADO
+	// FUNDO DO BUTÃO DO MENU QUANDO SELECIONADO
 	private Color k = Color.GRAY;
 
 	// COR DE FUNDO DAS CAIXAS DE TEXTO E TABELAS
@@ -110,7 +110,7 @@ public class Tema1 extends DefaultMetalTheme {
 
 	/**********************************************************************************************/
 
-	// COR DOS TEXTOS DOS BUT�ES, TABELAS, ABAS, MAS N�O DOS DO MENU
+	// COR DOS TEXTOS DOS BUTÕES, TABELAS, ABAS, MAS NÃO DOS DO MENU
 	public ColorUIResource getControlTextColor() {
 		return new ColorUIResource(a);
 	}
@@ -129,7 +129,7 @@ public class Tema1 extends DefaultMetalTheme {
 	}
 
 	public String getName() {
-		return "Th�me nocturne";
+		return "Thème nocturne";
 	}
 
 	public ColorUIResource getAcceleratorForeground() {
@@ -140,7 +140,7 @@ public class Tema1 extends DefaultMetalTheme {
 		return new ColorUIResource(naoSei[3]);
 	}
 
-	// PRINCIPAL - PANELS, BUT�ES
+	// PRINCIPAL - PANELS, BUTÕES
 	public ColorUIResource getControl() {
 		return new ColorUIResource(b);
 	}
@@ -194,7 +194,7 @@ public class Tema1 extends DefaultMetalTheme {
 		return new ColorUIResource(i);
 	}
 
-	// FUNDO DO BUT�O DO MENU QUANDO SELECIONADO
+	// FUNDO DO BUTÃO DO MENU QUANDO SELECIONADO
 	public ColorUIResource getMenuSelectedBackground() {
 		return new ColorUIResource(k);
 	}

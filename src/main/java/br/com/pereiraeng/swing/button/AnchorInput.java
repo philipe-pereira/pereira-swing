@@ -7,7 +7,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.JToggleButton;
 import javax.swing.SwingConstants;
 
-import br.com.pereiraeng.icons.Icons;
+import br.com.pereiraeng.icons.PereiraIcon;
 import br.com.pereiraeng.swing.Grade;
 import br.com.pereiraeng.swing.input.Input;
 
@@ -32,42 +32,42 @@ public class AnchorInput extends Grade implements Input<Integer> {
 	public AnchorInput() {
 		Dimension dimension = new Dimension(24, 24);
 
-		n = new JToggleButton(Icons.loadUtilsIcon("AlignTop24.gif"));
+		n = new JToggleButton(PereiraIcon.ALIGN_TOP.create());
 		n.setActionCommand(UP);
 		n.setPreferredSize(dimension);
 		add(n, 1, 0, 1, 1);
 
-		s = new JToggleButton(Icons.loadUtilsIcon("AlignBottom24.gif"));
+		s = new JToggleButton(PereiraIcon.ALIGN_BOTTOM.create());
 		s.setActionCommand(DOWN);
 		s.setPreferredSize(dimension);
 		add(s, 1, 2, 1, 1);
 
-		w = new JToggleButton(Icons.loadUtilsIcon("AlignLeft24.gif"));
+		w = new JToggleButton(PereiraIcon.ALIGN_LEFT.create());
 		w.setActionCommand(LEFT);
 		w.setPreferredSize(dimension);
 		add(w, 0, 1, 1, 1);
 
-		e = new JToggleButton(Icons.loadUtilsIcon("AlignRight24.gif"));
+		e = new JToggleButton(PereiraIcon.ALIGN_RIGHT.create());
 		e.setActionCommand(RIGHT);
 		e.setPreferredSize(dimension);
 		add(e, 2, 1, 1, 1);
 
-		ne = new JToggleButton(Icons.loadUtilsIcon("AlignNE.gif"));
+		ne = new JToggleButton(PereiraIcon.ALIGN_NE.create());
 		ne.setActionCommand(NE);
 		ne.setPreferredSize(dimension);
 		add(ne, 2, 0, 1, 1);
 
-		nw = new JToggleButton(Icons.loadUtilsIcon("AlignNW.gif"));
+		nw = new JToggleButton(PereiraIcon.ALIGN_NW.create());
 		nw.setActionCommand(NW);
 		nw.setPreferredSize(dimension);
 		add(nw, 0, 0, 1, 1);
 
-		se = new JToggleButton(Icons.loadUtilsIcon("AlignSE.gif"));
+		se = new JToggleButton(PereiraIcon.ALIGN_SE.create());
 		se.setActionCommand(SE);
 		se.setPreferredSize(dimension);
 		add(se, 2, 2, 1, 1);
 
-		sw = new JToggleButton(Icons.loadUtilsIcon("AlignSW.gif"));
+		sw = new JToggleButton(PereiraIcon.ALIGN_SW.create());
 		sw.setActionCommand(SW);
 		sw.setPreferredSize(dimension);
 		add(sw, 0, 2, 1, 1);

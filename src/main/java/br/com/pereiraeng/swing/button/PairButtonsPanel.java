@@ -3,9 +3,11 @@ package br.com.pereiraeng.swing.button;
 import java.awt.Dimension;
 import java.awt.event.ActionListener;
 
+import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import br.com.pereiraeng.icons.IconFactory;
 import br.com.pereiraeng.icons.Icons;
 
 /**
@@ -20,29 +22,52 @@ public abstract class PairButtonsPanel extends JPanel {
 	/**
 	 * Construtor do objeto gráfico de um par de botões
 	 * 
-	 * @param listener      escutador da ação de clicar sobre os butões
-	 * @param prefixCommand prefixo
-	 * @param left          endereço do arquivo da imagem do botão esquerdo
-	 * @param leftA         ação do botão esquerdo
-	 * @param right         endereço do arquivo da imagem do botão direito
-	 * @param rightA        ação do botão direito
-	 * @param dimension     tamanho dos botões
+	 * @param listener           escutador da ação de clicar sobre os butões
+	 * @param prefixCommand      prefixo
+	 * @param leftIconPath       endereço do arquivo da imagem do botão esquerdo
+	 * @param leftActionCommand  ação do botão esquerdo
+	 * @param rightIconPath      endereço do arquivo da imagem do botão direito
+	 * @param rightActionCommand ação do botão direito
+	 * @param dimension          tamanho dos botões
 	 */
-	protected PairButtonsPanel(ActionListener listener, String prefixCommand, String left, String leftA, String right,
-			String rightA, Dimension dimension) {
+	protected PairButtonsPanel(ActionListener listener, String prefixCommand, String leftIconPath,
+			String leftActionCommand, String rightIconPath, String rightActionCommand, Dimension dimension) {
+		this(listener, prefixCommand, Icons.loadIcon(leftIconPath), leftActionCommand, Icons.loadIcon(rightIconPath),
+				rightActionCommand, dimension);
+	}
+
+	/**
+	 * Construtor do objeto gráfico de um par de botões
+	 * 
+	 * @param listener           escutador da ação de clicar sobre os butões
+	 * @param prefixCommand      prefixo
+	 * @param leftIconPath       imagem do botão esquerdo
+	 * @param leftActionCommand  ação do botão esquerdo
+	 * @param rightIconPath      imagem do botão direito
+	 * @param rightActionCommand ação do botão direito
+	 * @param dimension          tamanho dos botões
+	 */
+	protected PairButtonsPanel(ActionListener listener, String prefixCommand, IconFactory leftIcon,
+			String leftActionCommand, IconFactory rightIcon, String rightActionCommand, Dimension dimension) {
+		this(listener, prefixCommand, leftIcon.create(), leftActionCommand, rightIcon.create(), rightActionCommand,
+				dimension);
+	}
+
+	private PairButtonsPanel(ActionListener listener, String prefixCommand, Icon left, String leftActionCommand,
+			Icon right, String rightActionCommand, Dimension dimension) {
 		// zoom in
-		JButton b = new JButton(Icons.loadIcon(left));
+		JButton button = new JButton(left);
 		if (dimension != null)
-			b.setPreferredSize(dimension);
-		b.setActionCommand(prefixCommand + leftA);
-		add(b);
+			button.setPreferredSize(dimension);
+		button.setActionCommand(prefixCommand + leftActionCommand);
+		add(button);
 
 		// zoom out
-		b = new JButton(Icons.loadIcon(right));
+		button = new JButton(right);
 		if (dimension != null)
-			b.setPreferredSize(dimension);
-		b.setActionCommand(prefixCommand + rightA);
-		add(b);
+			button.setPreferredSize(dimension);
+		button.setActionCommand(prefixCommand + rightActionCommand);
+		add(button);
 
 		if (listener != null)
 			addActionListener(listener);

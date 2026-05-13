@@ -3,11 +3,12 @@ package br.com.pereiraeng.swing.button;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 
+import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import br.com.pereiraeng.icons.Icons;
-import br.com.pereiraeng.swing.SwingUtils;
+import br.com.pereiraeng.icons.PereiraIcon;
 
 /**
  * Classe do objeto gráfico com uma sequência de botões como controle do fluxo
@@ -61,15 +62,17 @@ public class TimeCtrlPanel extends JPanel {
 	public TimeCtrlPanel(boolean[] buttons, ActionListener listener) {
 		super(new FlowLayout(FlowLayout.CENTER, 0, 0));
 
-		final String[] imagesActions = { REWIND, STEP_BACK, PlayStopButton.STOP, PlayStopButton.PLAY, PAUSE,
-				STEP_FORWARD, FAST_FORWARD };
+		final Icon[] icons = { PereiraIcon.REWIND.create(), PereiraIcon.STEP_BACK.create(), PereiraIcon.STOP.create(),
+				PereiraIcon.PLAY.create(), PereiraIcon.PAUSE.create(), PereiraIcon.STEP_FORWARD.create(),
+				PereiraIcon.FAST_FORWARD.create() };
+		final String[] actions = { REWIND, STEP_BACK, PlayStopButton.STOP, PlayStopButton.PLAY, PAUSE, STEP_FORWARD,
+				FAST_FORWARD };
 
 		for (int i = 0; i < buttons.length; i++) {
 			if (buttons[i]) {
-				String img = imagesActions[i] + "24.gif";
-				JButton b = new JButton(Icons.loadUtilsIcon(img));
-				b.setActionCommand(imagesActions[i]);
-				b.setPreferredSize(SwingUtils.DIM_BUTTON_ICON);
+				JButton b = new JButton(icons[i]);
+				b.setActionCommand(actions[i]);
+				b.setPreferredSize(Icons.DIM_BUTTON_ICON);
 				add(b);
 			}
 		}

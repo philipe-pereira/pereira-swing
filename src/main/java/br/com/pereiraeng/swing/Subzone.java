@@ -37,7 +37,7 @@ public class Subzone extends JInternalFrame implements ActionListener {
 
 		// conteúdo
 
-		this.getContentPane().add(SwingUtils.getBar("images", buttons, this), BorderLayout.NORTH);
+		this.getContentPane().add(SwingUtils.getBar(buttons, this), BorderLayout.NORTH);
 
 		// zona de trabalho
 
